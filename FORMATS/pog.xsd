@@ -1,0 +1,1407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="https://www.atelierb.eu/Formats/pog"
+    xmlns="https://www.atelierb.eu/Formats/pog"
+    elementFormDefault="qualified">
+
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      The purpose of this document is to describe and illustrate
+      the POG format: an XML representation of the proof obligations
+      for a B component or for an Event-B component.
+
+      * This documentation corresponds to version 1.0 of the format.
+
+      * The root element is always a
+      [Proof_Obligations](#element_Proof_Obligations "Definition of element Proof_Obligations").
+
+      Proof obligations are essentially combinations of B
+      predicates. An important part of the format describes how B
+      predicates, expressions and types are represented. This
+      description references the B Language Reference Manual, version
+      1.8.10 as *BLRM*.
+
+      ### Licensing
+
+      © 2019 by CLEARSY Systems Engineering.
+
+      ![Creative Commons License](https://i.creativecommons.org/l/by-nc/4.0/80x15.png)
+
+      This work is available under a [Creative Commons
+      Attribution-NonCommercial 4.0 International (CC-BY-NC)
+      License](http://creativecommons.org/licenses/by-nc/4.0/).
+      
+    </xs:documentation>
+  </xs:annotation>
+
+  <xs:element name="Proof_Obligations">
+
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        
+        All proof obligations in a component reference sets of
+        hypotheses originating from different clauses of the current
+        component, and of components referenced from the current
+        component.  These references compose the _context_ of the
+        proof obligations.
+
+        So, in a POG file, the context is split into several sets of
+        hypotheses, according to their origin in the source
+        components. Such sets of hypotheses are represented by root
+        child elements named [Define](#element_Define "Definition of element Define").
+
+        Proof obligations are grouped according to their origin in
+        the component. For instance, the following component clauses give rise to
+        one group of proof obligations :
+
+        * for the initialisation;
+        
+        * for each operation;
+
+        * for the well-definedness of each clause of the component
+        containing expressions;
+
+        In a POG file, such groups are represented by root child elements
+        named [Proof_Obligation](#element_Proof_Obligation "Definition of element Proof_Obligation").
+
+        Finally, typing information of expression is represented in a root
+        child element named [TypeInfos](#element_TypeInfos "Definition of element TypeInfos").
+        
+      </xs:documentation>
+    </xs:annotation>
+
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Define"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Proof_Obligation"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="TypeInfos"/>
+      </xs:sequence>
+      <xs:attribute name="version" type="version_type" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+    <xs:simpleType name="version_type">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Represents the possible values for the `version` attribute for
+          the root element. Currently a unique value is possible: `"1.0"`.
+          When the format evolves, the new versions will be added there.
+        </xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="1.0"/>
+      </xs:restriction>
+    </xs:simpleType>
+
+  <xs:element name="Define">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This element represents part of the context. The name attribute
+        identifies which part of the context the current element
+        represents. The possible values for this attribute are :
+
+        * `"B definitions"`: Definitions of predefined sets `NAT` and `INT`.
+        
+        * `"ctx"`: SETS and PROPERTIES from seen components and their
+        included components;
+
+        * `"seext"`: INVARIANT and ASSERTIONS from seen components and
+        their included components;
+
+        * `"inv"`: INVARIANT of the component;
+
+        * `"ass"`: ASSERTIONS of the current component;
+
+        * `"lprp"`: SETS and PROPERTIES of the current component;
+
+        * `"inprp"`: SETS and PROPERTIES of the included components of
+        the current component;
+
+        * `"inext"`: INVARIANT and ASSERTIONS clauses of the included components
+        of the current component;
+
+        * `"cst"`: CONSTRAINTS clause of the current component;
+
+        * `"sets"`: SETS clause of the current component;
+
+        If the current component is a refinement or an implementation:
+        
+        * `"mchcst"`: CONSTRAINTS clause of the component refined by
+        the current component;
+
+        * `"aprp"`: SETS and PROPERTIES clauses of all the refined components
+        as well as their included components;
+
+        * `"abs"`: INVARIANT and ASSERTIONS clauses of all the refined components
+        as well as their included components;
+
+        If the current component is an implementation:
+
+        * `"imlprp"`: SETS, PROPERTIES and VALUES clauses of the current component;
+
+        * `"imprp"`: SETS and PROPERTIES clauses of all the imported components
+        as well as their included components;
+
+        * `"imext"`: INVARIANT and ASSERTIONS clauses of all the imported
+        components as well as their included components.
+
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Set" minOccurs="0" maxOccurs="unbounded" />
+        <xs:group minOccurs="0" maxOccurs="unbounded" ref="pred_group"/>
+      </xs:sequence>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+      <xs:attribute name="hash" type="xs:nonNegativeInteger" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Proof_Obligation">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This element represents a group of proof obligations.
+
+        * Child element [Tag](#element_Tag "Definition of element Tag")
+        contains an informational description of the source of this
+        group of proof obligations.
+
+        * Child elements [Definition](#element_Definition "Description of Definition elements")
+        reference elements of the context.
+
+        * Child elements [Hypothesis](#element_Hypothesis "Description of Hypothesis elements")
+        represent hypotheses that are common to all the proof obligations in this group.
+
+        * Child elements [Local_Hyp](#element_Local_Hyp "Description of Local_Hyp elements")
+        represent hypotheses that are common to some of the proof obligations in this group.
+
+        * Finally, child elements [Simple_Goal](#element_Simple_Goal "Description of Simple_Goal elements")
+        represent the proof obligations in this group.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="Tag" type="xs:string"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Definition"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Hypothesis"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Local_Hyp"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Simple_Goal"/>
+      </xs:sequence>
+      <xs:attribute name="goalHash" type="xs:nonNegativeInteger" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="TypeInfos">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        This is the element containing all the types of the expressions
+        appearing in the proof obligations.
+
+        Each child `Type` is a [typeinfos_type](#type_typeinfos_type) element
+        and represents a B type.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Type" minOccurs="0" maxOccurs="unbounded" type="typeinfos_type"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Definition">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a reference to an element
+        [Define](#element_Define "Definition of element Define").
+        The attribute `name` identifies which element is referenced.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Hypothesis" type="predicate_type">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents an hypothesis common to all proof obligations
+        in a [Proof_Obligation](#element_Proof_Obligation "Description of element Proof_Obligation").
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="Local_Hyp">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents an hypothesis common to some of the proof obligations
+        in a [Proof_Obligation](#element_Proof_Obligation "Description of element Proof_Obligation").
+
+        Attribute `num` plays the role of identifier for referencing
+        by individual proof obligations.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group ref="pred_group"/>
+      <xs:attribute name="num" type="xs:positiveInteger" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="Simple_Goal">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents an individual proof obligation in a [Proof_Obligation](#element_Proof_Obligation "Description of element Proof_Obligation") group.
+
+        * Child element Tag contains an informational text describing the role of the proof obligation.
+
+        * Child elements [Ref_Hyp](#element_Ref_Hyp "Description of element Ref_Hyp") are
+        references to [Local_Hyp](#element_Local_Hyp "Description of element Local_Hyp")
+        elements, representing hypotheses local to the current group.
+
+        * Child element Goal contains the goal predicate of the proof obligation.
+
+        * Child element [Proof_State](#element_Proof_State "Description of element Proof_State") is obsolete.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Tag" type="xs:string"/>
+        <xs:element ref="Ref_Hyp" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element minOccurs="0" name="Goal" type="predicate_type"/>
+        <xs:element minOccurs="0" ref="Proof_State"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Ref_Hyp">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the reference to a local hypothesis in a proof obligation.
+        The value of attribute `num`
+        identifies the referenced hypothesis.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="num" type="xs:positiveInteger" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Proof_State">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Deprecated (to be removed).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="passList" type="xs:string" use="required"/> 
+      <xs:attribute name="methodList" type="xs:string" use="required"/> 
+      <xs:attribute name="proofState" type="xs:string" use="required"/> 
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="predicate_type">
+    <xs:group ref="pred_group"/>
+  </xs:complexType>
+
+  <xs:group name="pred_group">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        The different types of elements representing predicates.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element ref="Binary_Pred"/>
+      <xs:element ref="Exp_Comparison"/>
+      <xs:element ref="Quantified_Pred"/>
+      <xs:element ref="Unary_Pred"/>
+      <xs:element ref="Nary_Pred"/>
+    </xs:choice>
+  </xs:group>
+
+  <xs:element name="Set">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the definition of a set (in the SETS clause of a component).
+
+        * Child element [Id](#element_Id "Description of element Id") represents
+        the set identifier.
+        
+        * If there are no child elements
+        [Enumerated_Values](#element_Enumerated_Values),
+        then it is an abstract set, otherwise it is an enumeration.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Id" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="Enumerated_Values" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Enumerated_Values">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents an enumeration (see element [Set](#element_Set "Description of element Set")).
+
+        * Child elements [Id](#element_Id "Description of element Id")
+        represent the enumerated identifiers.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Id" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Binary_Pred">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a binary predicate.
+
+        * Two child elements represent the arguments.
+
+        * Attribute op represents the operator and shall be a
+        [binary_pred_op](#type_binary_pred_op).
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group ref="pred_group" minOccurs="2" maxOccurs="2"/>
+      <xs:attribute name="op" type="binary_pred_op" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="binary_pred_op">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the possible values of a binary predicate operator.
+        They correspond to implication (`"=>"`) and equivalence (`"&lt;=>"`) .
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="=>" />
+      <xs:enumeration value="&lt;=>" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="Exp_Comparison">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a comparison expression.
+
+        * Two child elements represent the arguments to the expression.
+
+        * Attribute `op` represents the operator and is restricted to
+        be a [comparison_op](#type_comparison_op).
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group ref="exp_group" minOccurs="2" maxOccurs="2"/>
+      <xs:attribute name="op" type="comparison_op" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="comparison_op">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the possible values of a comparison operator.  The meaning
+        of the operators is described in (BLRM,§A).
+
+        Some overloaded B operators are resolved :
+        
+        * `>` (greater than) is resolved to
+        `">i"` (integers),
+        `">r"` (real numbers),
+        `">f"` (floating point numbers).
+
+        * `>=` (greater than or equal to) is resolved to
+        `">=i"` (integers),
+        `">=r"` (real numbers),
+        `">=f"` (floating point numbers).
+
+        * `&lt;` (lower than) is resolved to
+        `"&lt;i"` (integers),
+        `"&lt;r"` (real numbers),
+        `"&lt;f"` (floating point numbers).
+
+        * `&lt;=` (lower than or equal to) is resolved to
+        `"&lt;=i"` (integers),
+        `"&lt;=r"` (real numbers),
+        `"&lt;=f"` (floating point numbers).
+
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value=":" />
+      <xs:enumeration value="/:" />
+      <xs:enumeration value="&lt;:" />
+      <xs:enumeration value="/&lt;:" />
+      <xs:enumeration value="&lt;&lt;:" />
+      <xs:enumeration value="/&lt;&lt;:" />
+      <xs:enumeration value="=" />
+      <xs:enumeration value="/=" />
+      <!-- integer comparison -->
+      <xs:enumeration value=">=i" />
+      <xs:enumeration value=">i" />
+      <xs:enumeration value="&lt;i" />
+      <xs:enumeration value="&lt;=i" />
+      <!-- real comparison -->
+      <xs:enumeration value=">=r" />
+      <xs:enumeration value=">r" />
+      <xs:enumeration value="&lt;r" />
+      <xs:enumeration value="&lt;=r" />
+      <!-- float comparison -->
+      <xs:enumeration value=">=f" />
+      <xs:enumeration value=">f" />
+      <xs:enumeration value="&lt;f" />
+      <xs:enumeration value="&lt;=f" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="Quantified_Pred">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a quantification predicate
+
+        * Child element `Variables` represents the list of quantified variables
+        and is of type [variables_type](#type_variables_type).
+
+        * Child element `Body` represents the quantified predicate;
+        it is of type [predicate_type](#type_predicate_type).
+
+        * Attribute `type` represents the quantifier and shall be
+        a [quantified_pred_op](#type_quantified_pred_op).
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Variables" type="variables_type"/>
+        <xs:element name="Body" type="predicate_type"/>
+      </xs:sequence>
+      <xs:attribute name="type" type="quantified_pred_op" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="quantified_pred_op">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the possible quantifiers:
+        `"!"` for universal and `"#"` for existential.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="!" />
+      <xs:enumeration value="#" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="Unary_Pred">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a unary predicate.
+
+        * The single child element represent the arguments to the predicate.
+
+        * Attribute op represents the operator and shall be a
+        [unary_pred_op](#type_unary_pred_op).
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group ref="pred_group"/>
+      <xs:attribute name="op" type="unary_pred_op" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="unary_pred_op">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the possible operators:
+        `"not"` (for negation) is the only possibility.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="not" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="Nary_Pred" >
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a n-ary predicate.
+
+        * The child elements represent the arguments of the predicate.
+
+        * Attribute op represents the operator and shall be a
+        [nary_pred_op](#type_nary_pred_op).
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group ref="pred_group" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:attribute name="op" type="nary_pred_op"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="nary_pred_op">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the possible n-ary predicate operators : conjunction
+        (`"&amp;"`) and disjunction (`"or"`).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="&amp;" />
+      <xs:enumeration value="or" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="expression_type">
+    <xs:group ref="exp_group"/>
+  </xs:complexType>
+
+  <xs:complexType name="variables_type">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a list of quantified identifiers, each being
+        a child element [Id](#element_Id).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="Id" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:group name="exp_group">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        The different types of elements representing expressions.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element ref="Unary_Exp"/>
+      <xs:element ref="Binary_Exp"/>
+      <xs:element ref="Ternary_Exp"/>
+      <xs:element ref="Nary_Exp"/>
+      <xs:element ref="Boolean_Literal"/>
+      <xs:element ref="Boolean_Exp"/>
+      <xs:element ref="EmptySet"/>
+      <xs:element ref="EmptySeq"/>
+      <xs:element ref="Id"/>
+      <xs:element ref="Integer_Literal"/>
+      <xs:element ref="Quantified_Exp"/>
+      <xs:element ref="Quantified_Set"/>
+      <xs:element ref="STRING_Literal"/>
+      <xs:element ref="Struct"/>
+      <xs:element ref="Record"/>
+      <xs:element ref="Real_Literal"/>
+      <xs:element ref="Record_Update"/>
+      <xs:element ref="Record_Field_Access"/>
+    </xs:choice>
+  </xs:group>
+  
+  <xs:element name="Unary_Exp">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a unary expression.
+
+        * The single child element represents the argument.
+
+        * Attribute `op` represents the operator and shall be a
+        [unary_exp_op](#type_unary_exp_op).
+        
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group ref="exp_group"/>
+      <xs:attribute name="op" type="unary_exp_op" use="required"/>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Binary_Exp">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a binary expression.
+
+        * Two child elements represent the arguments.
+
+        * Attribute `op` represents the operator and shall be a
+        [binary_exp_op](#type_binary_exp_op).
+        
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group ref="exp_group" minOccurs="2" maxOccurs="2"/>
+      <xs:attribute name="op" type="binary_exp_op" use="required"/>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Ternary_Exp">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a ternary expression.
+
+        * Three child elements represent the arguments.
+
+        * Attribute `op` represents the operator and shall be a
+        [ternary_exp_op](#type_ternary_exp_op).
+        
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group ref="exp_group" minOccurs="3" maxOccurs="3"/>
+      <xs:attribute name="op" type="ternary_exp_op" use="required"/>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Nary_Exp">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a n-ary expression.
+
+        * The child elements represent the arguments.
+
+        * Attribute `op` represents the operator and shall be a
+        [nary_exp_op](#type_nary_exp_op).
+        
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group ref="exp_group" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:attribute name="op" type="nary_exp_op" use="required"/>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="boolean_literal_type">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Restricts the possible values of a Boolean literal.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TRUE" />
+      <xs:enumeration value="FALSE" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="Boolean_Exp">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Representation the conversion of a predicate to a Boolean
+        expression.
+
+        * A single child element represents the converted predicate.
+        
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:group ref="pred_group"/>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="EmptySet">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents an empty set.
+        
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="EmptySeq">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents an empty sequence.
+        
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Boolean_Literal">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a Boolean literal expression.
+        
+        * Attribute `value` is the represented literal and is of
+        type [boolean_literal_type](#type_boolean_literal_type).
+        
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="value" type="boolean_literal_type" use="required"/>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Integer_Literal">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents an integer literal expression.
+        
+        * Attribute `value` is the represented literal and is an
+        integer.
+        
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="value" type="xs:integer" use="required"/>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Real_Literal">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a real number literal expression.
+        
+        * Attribute `value` is the represented literal and is a decimal
+        (e.g., `value="3.1415"`).
+
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="value" type="xs:decimal" use="required"/>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="STRING_Literal">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a string literal expression.
+        
+        * Attribute `value` is the represented literal and is a string.
+
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="value" type="xs:string" use="required"/>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Quantified_Exp">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a quantifying expression: either a lambda-expression,
+        or a quantified sum or product, or a quantified union or
+        intersection.
+
+        * Child `Variables` is a [variables_type](#type_variables_type)
+        and represents the list of quantified variables.
+
+        * Child `Pred` is a [predicate_type](#type_predicate_type)
+        and represents the typing and otherwise constraining
+        predicate.
+
+        * Child element `Body` is the quantified expression;
+        it is of type [expression_type](#type_expression_type).
+
+        * Attribute `type` represents the operator and shall be a
+        [quantified_exp_op](#type_quantified_exp_op).
+        
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Variables" type="variables_type"/>
+        <xs:element name="Pred" type="predicate_type"/>
+        <xs:element name="Body" type="expression_type"/>
+      </xs:sequence>
+      <xs:attribute name="type" type="quantified_exp_op" use="required"/>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Quantified_Set">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a set defined in comprehension.
+
+        * Child `Variables` is a [variables_type](#type_variables_type)
+        and represents variables appearing in the comprehension list.
+
+        * Child `Body` is a [predicate_type](#type_predicate_type)
+        and represents the predicate characterizing the set elements.
+
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Variables" type="variables_type"/>
+        <xs:element name="Body" type="predicate_type"/>
+      </xs:sequence>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Struct">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a set of records, as described in [BLRM, §5.9].
+
+        * Children `Record_Item` are
+        [record_item_type](#type_record_item_type)
+        elements and represent the different fields in the
+        expression.
+        
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Record_Item" minOccurs="1" maxOccurs="unbounded" type="record_item_type"/>
+      </xs:sequence>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Record">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a record in extension, as described in [BLRM, §5.9].
+
+        * Children `Record_Item` are
+        [record_item_type](#type_record_item_type)
+        elements and represent the different fields in the
+        expression.
+
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Record_Item" minOccurs="1" maxOccurs="unbounded" type="record_item_type"/>
+      </xs:sequence>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Record_Field_Access">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">
+          Represents the value of a field in a record.
+
+          * Child element represents the record.
+
+        </xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+        <xs:group ref="exp_group" minOccurs="1" maxOccurs="1"/>
+	<xs:attribute name="typref" type="xs:integer" use="required"/>
+	<xs:attribute name="label" type="xs:string" use="required"/>
+        <xs:attribute name="tag" type="xs:string" use="optional"/>
+      </xs:complexType>
+    </xs:element>
+
+  <xs:element name="Id">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the occurence of an identifier.
+
+        * Attribute `value` is the identifier.
+
+        * Optional attribute `suffix` is used for derived identifiers
+        and is then a positive integer. Such identifiers are created
+        to avoid name clashes.
+        
+        * Attribute `typref` is the index of the type representation
+        in the [TypeInfos](#element_TypeInfos) element of the document.
+        
+        * Optional attribute `tag` represents a position or a list of positions
+        in the source bxml. It can be used to trace the origin of the expression.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:attribute name="value" type="xs:string" use="required"/>
+      <xs:attribute name="suffix" type="xs:positiveInteger"/>
+      <xs:attribute name="typref" type="xs:integer" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="binary_exp_op">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the possible binary expression operators. The meaning
+        of the operators is described in (BLRM,§A).
+
+        Overloaded B operators are resolved :
+        
+        * `*` is resolved to `"*s"` (Cartesian product),
+        `"*i"` (multiplication of integers),
+        `"*r"` (multiplication of real numbers),
+        `"*f"` (multiplication of floating point numbers).
+
+        * `**` is resolved to `"*s"` (Cartesian product),
+        `"**i"` (exponentiation of integers),
+        `"**r"` (exponentiation of a real numbers).
+
+        * `"+"` is resolved to
+        `"+i"` (addition of integers),
+        `"+r"` (addition of real numbers),
+        `"+f"` (addition of floating point numbers).
+
+        * `-` is resolved to `"-s"` (set difference),
+        `"-i"` (subtraction of integers),
+        `"-r"` (subtraction of real numbers),
+        `"-f"` (subtraction of floating point numbers).
+
+        * `/` is resolved to
+        `"/i"` (division quotient of integers),
+        `"/r"` (division of real numbers),
+        `"/f"` (division of floating point numbers).
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="," />
+      <xs:enumeration value="*" />
+      <xs:enumeration value="*i" />
+      <xs:enumeration value="*r" />
+      <xs:enumeration value="*f" />
+      <xs:enumeration value="*s" />
+      <xs:enumeration value="**" />
+      <xs:enumeration value="**i" />
+      <xs:enumeration value="**r" />
+      <xs:enumeration value="+" />
+      <xs:enumeration value="+i" />
+      <xs:enumeration value="+r" />
+      <xs:enumeration value="+f" />
+      <xs:enumeration value="+->" />
+      <xs:enumeration value="+->>" />
+      <xs:enumeration value="-" />
+      <xs:enumeration value="-i" />
+      <xs:enumeration value="-r" />
+      <xs:enumeration value="-f" />
+      <xs:enumeration value="-s" />
+      <xs:enumeration value="-->" />
+      <xs:enumeration value="-->>" />
+      <xs:enumeration value="->" />
+      <xs:enumeration value=".." />
+      <xs:enumeration value="/" />
+      <xs:enumeration value="/i" />
+      <xs:enumeration value="/r" />
+      <xs:enumeration value="/f" />
+      <xs:enumeration value="/\" />
+      <xs:enumeration value="/|\" />
+      <xs:enumeration value=";" />
+      <xs:enumeration value="&lt;+" />
+      <xs:enumeration value="&lt;->" />
+      <xs:enumeration value="&lt;-" />
+      <xs:enumeration value="&lt;&lt;|" />
+      <xs:enumeration value="&lt;|" />
+      <xs:enumeration value=">+>" />
+      <xs:enumeration value=">->" />
+      <xs:enumeration value=">+>>" />
+      <xs:enumeration value=">->>" />
+      <xs:enumeration value=">&lt;" />
+      <xs:enumeration value="||" />
+      <xs:enumeration value="\/" />
+      <xs:enumeration value="\|/" />
+      <xs:enumeration value="^" />
+      <xs:enumeration value="mod" />
+      <xs:enumeration value="|->" />
+      <xs:enumeration value="|>" />
+      <xs:enumeration value="|>>" />
+      <xs:enumeration value="[" />
+      <xs:enumeration value="(" />
+      <xs:enumeration value="&lt;'" />
+      <xs:enumeration value="prj1" />
+      <xs:enumeration value="prj2" />
+      <xs:enumeration value="iterate" />
+      <xs:enumeration value="const" />
+      <xs:enumeration value="rank" />
+      <xs:enumeration value="father" />
+      <xs:enumeration value="subtree" />
+      <xs:enumeration value="arity" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="nary_exp_op">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the possible n-ary expression operators:
+
+        * `"["` is used to represent a sequence literal.
+        
+        * `"{"` is used to represent a set literal defined in extension.
+        
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="[" />
+      <xs:enumeration value="{" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ternary_exp_op">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the possible ternary expression operators. The meaning
+        of the operators is described in (BLRM,§A).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="son" />
+      <xs:enumeration value="bin" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="quantified_exp_op">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the possible expression quantifiers. The meaning
+        of the quantifiers is described in (BLRM,§A).
+
+        Overloaded B operators are resolved :
+        
+        * `SIGMA` is resolved to
+        `"iSIGMA"` (sum over integers),
+        `"rSIGMA"` (sum over real numbers).
+
+        * `PI` is resolved to
+        `"iPI"` (product over integers),
+        `"rPI"` (product over real numbers).
+
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="%" />
+      <xs:enumeration value="SIGMA" />
+      <xs:enumeration value="iSIGMA" />
+      <xs:enumeration value="rSIGMA" />
+      <xs:enumeration value="PI" />
+      <xs:enumeration value="iPI" />
+      <xs:enumeration value="rPI" />
+      <xs:enumeration value="INTER" />
+      <xs:enumeration value="UNION" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="unary_exp_op">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents the possible unary expression operators. The meaning
+        of the operators is described in (BLRM,§A).
+
+        Overloaded B operators are resolved :
+        
+        * `max` is resolved to
+        `"imax"` (maximum of a set of integers),
+        `"rmax"` (maximum of a set of real numbers).
+
+        * `min` is resolved to
+        `"imin"` (minimum of a set of integers),
+        `"rmin"` (minimum of a set of real numbers).
+
+        * `-` (unary minus)  is resolved to
+        `"-i"` (unary minus over integers),
+        `"-r"` (unary minus over real numbers).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="max" />
+      <xs:enumeration value="imax" />
+      <xs:enumeration value="rmax" />
+      <xs:enumeration value="min" />
+      <xs:enumeration value="imin" />
+      <xs:enumeration value="rmin" />
+      <xs:enumeration value="card" />
+      <xs:enumeration value="dom" />
+      <xs:enumeration value="ran" />
+      <xs:enumeration value="POW" />
+      <xs:enumeration value="POW1" />
+      <xs:enumeration value="FIN" />
+      <xs:enumeration value="FIN1" />
+      <xs:enumeration value="union" />
+      <xs:enumeration value="inter" />
+      <xs:enumeration value="seq" />
+      <xs:enumeration value="seq1" />
+      <xs:enumeration value="iseq" />
+      <xs:enumeration value="iseq1" />
+      <xs:enumeration value="-" />
+      <xs:enumeration value="-i" />
+      <xs:enumeration value="-r" />
+      <xs:enumeration value="~" />
+      <xs:enumeration value="size" />
+      <xs:enumeration value="perm" />
+      <xs:enumeration value="first" />
+      <xs:enumeration value="last" />
+      <xs:enumeration value="id" />
+      <xs:enumeration value="closure" />
+      <xs:enumeration value="closure1" />
+      <xs:enumeration value="tail" />
+      <xs:enumeration value="front" />
+      <xs:enumeration value="rev" />
+      <xs:enumeration value="conc" />
+      <xs:enumeration value="succ" />
+      <xs:enumeration value="pred" />
+      <xs:enumeration value="rel" />
+      <xs:enumeration value="fnc" />
+      <xs:enumeration value="real" />
+      <xs:enumeration value="floor" />
+      <xs:enumeration value="ceiling" />
+      <xs:enumeration value="tree" />
+      <xs:enumeration value="btree" />
+      <xs:enumeration value="top" />
+      <xs:enumeration value="sons" />
+      <xs:enumeration value="prefix" />
+      <xs:enumeration value="postfix" />
+      <xs:enumeration value="sizet" />
+      <xs:enumeration value="mirror" />
+      <xs:enumeration value="left" />
+      <xs:enumeration value="right" />
+      <xs:enumeration value="infix" />
+      <xs:enumeration value="bin" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="record_item_type">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a field in a record or a set of record
+        expression (BLRM,§5.9).
+
+        * Attribute `label` is the field identifier.
+
+        * The child represents the field expression and is
+        an element in [exp_group](#group_exp_group).
+
+      </xs:documentation>
+    </xs:annotation>
+    <xs:group ref="exp_group"/>
+    <xs:attribute name="label" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:element name="Record_Update">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents an updated record. Such expressions are introduced
+        during normalization of a "becomes equal" substitution where
+        the target is the field of a record, to a "becomes equal"
+        substitution where the target is a whole record.
+
+        For instance
+        ```
+        point'xx := point'xx + 1
+        ```
+        is normalized to
+        ```
+        point := record_update(point, xx, point'xx + 1)
+        ```
+        
+        * The first element represents the target record.
+
+        * The attribute 'label' represents the target field.
+
+        * The last element represents the source expression.
+
+        * Optional attribute `tag` represents the position of the
+        expression(s) in the source code.
+
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="exp_group"/>
+        <xs:group ref="exp_group"/>
+      </xs:sequence>
+      <xs:attribute name="label" type="xs:string" use="required"/>
+      <xs:attribute name="tag" type="xs:string" use="optional"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:group name="type_group">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Represents a B type (BLRM,§3.2).
+
+        The following representations exist:
+
+        * `Binary_Exp` to represent a Cartesian product type.
+
+        * `Unary_Exp` to represent a powerset type.
+
+        * `Struct` to represent a record type.
+
+        * `Id` to represent either a predefined type or a deferred set.
+
+        * `Generic_Type` for expression that could not be given a B type
+        (e.g. an empty set expression may have type `&lt;Unary_Exp op="POW"&gt;&lt;Generic_Type/&gt;&lt;/Unary_Exp&gt;`).
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:element name="Binary_Exp">
+        <xs:complexType>
+          <xs:group minOccurs="2" maxOccurs="2" ref="type_group"/>
+          <xs:attribute name="op" type="xs:string" use="required" fixed="*"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Id">
+        <xs:complexType>
+          <xs:attribute name="value" type="xs:string" use="required" />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Unary_Exp">
+        <xs:complexType>
+          <xs:group ref="type_group"/>
+          <xs:attribute name="op" type="xs:string" use="required" fixed="POW"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Struct">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Record_Item" minOccurs="1" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:group ref="type_group"/>
+                <xs:attribute name="label" type="xs:string" use="required"/>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Generic_Type">
+        <xs:complexType>
+        </xs:complexType>
+      </xs:element>
+    </xs:choice>
+  </xs:group>
+
+  <xs:complexType name="typeinfos_type">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        The elements representing entries in the
+        [TypeInfos](#element_TypeInfos) of the document.
+
+        Integer attribute `id` identifies uniquely the
+        type expression and is used in type references
+        for elements representing expressions.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:group ref="type_group"/>
+    <xs:attribute name="id" type="xs:integer" use="required"/>
+  </xs:complexType>
+
+</xs:schema>
