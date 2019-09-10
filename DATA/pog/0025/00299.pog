@@ -1,0 +1,4528 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+This work is licensed under a
+Creative Commons Attribution-NonCommercial 4.0 International License
+CC BY-NC 4.0
+See terms at https://creativecommons.org/licenses/by-nc/4.0/
+Copyright © CLEARSY 2019
+-->
+<Proof_Obligations xmlns="https://www.atelierb.eu/Formats/pog" version="1.0">
+    <Define name="B definitions" hash="13828030950441524962">
+        <Exp_Comparison op="=">
+            <Id value="NAT" typref="0" />
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="0" typref="1" />
+                <Id value="MAXINT" typref="1" />
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="INT" typref="0" />
+            <Binary_Exp op=".." typref="0">
+                <Id value="MININT" typref="1" />
+                <Id value="MAXINT" typref="1" />
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ctx" hash="0" />
+    <Define name="seext" hash="0" />
+    <Define name="lprp" hash="13153385321329801881">
+        <Set>
+            <Id value="s0" typref="2" />
+        </Set>
+        <Set>
+            <Id value="s1" typref="3" />
+        </Set>
+        <Set>
+            <Id value="s2" typref="4" />
+        </Set>
+        <Set>
+            <Id value="s3" typref="5" />
+        </Set>
+        <Set>
+            <Id value="s4" typref="6" />
+        </Set>
+        <Set>
+            <Id value="s5" typref="7" />
+        </Set>
+        <Set>
+            <Id value="s6" typref="8" />
+        </Set>
+        <Set>
+            <Id value="s7" typref="9" />
+        </Set>
+        <Exp_Comparison op=":">
+            <Id value="s8" typref="10" />
+            <Binary_Exp op="--&gt;" typref="11">
+                <Binary_Exp op="*s" typref="12">
+                    <Id value="INTEGER" typref="0" />
+                    <Id value="NATURAL" typref="0" />
+                </Binary_Exp>
+                <Id value="INTEGER" typref="0" />
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="s8" typref="10" />
+            <Binary_Exp op="\/" typref="10">
+                <Quantified_Exp type="%" typref="10">
+                    <Variables>
+                        <Id value="s9" typref="1" />
+                        <Id value="s10" typref="1" />
+                    </Variables>
+                    <Pred>
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op=":">
+                                <Id value="s9" typref="1" />
+                                <Id value="NATURAL" typref="0" />
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Id value="s10" typref="1" />
+                                <Id value="NATURAL" typref="0" />
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                    </Pred>
+                    <Body>
+                        <Binary_Exp op="/i" typref="1">
+                            <Id value="s9" typref="1" />
+                            <Binary_Exp op="**i" typref="1">
+                                <Integer_Literal value="2" typref="1" />
+                                <Id value="s10" typref="1" />
+                            </Binary_Exp>
+                        </Binary_Exp>
+                    </Body>
+                </Quantified_Exp>
+                <Quantified_Exp type="%" typref="10">
+                    <Variables>
+                        <Id value="s9" typref="1" />
+                        <Id value="s10" typref="1" />
+                    </Variables>
+                    <Pred>
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op=":">
+                                <Id value="s9" typref="1" />
+                                <Id value="INTEGER" typref="0" />
+                            </Exp_Comparison>
+                            <Exp_Comparison op=":">
+                                <Id value="s10" typref="1" />
+                                <Id value="NATURAL" typref="0" />
+                            </Exp_Comparison>
+                            <Exp_Comparison op="&lt;i">
+                                <Id value="s9" typref="1" />
+                                <Integer_Literal value="0" typref="1" />
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                    </Pred>
+                    <Body>
+                        <Unary_Exp op="-i" typref="1">
+                            <Binary_Exp op="/i" typref="1">
+                                <Binary_Exp op="-i" typref="1">
+                                    <Binary_Exp op="+i" typref="1">
+                                        <Unary_Exp op="-i" typref="1">
+                                            <Id value="s9" typref="1" />
+                                        </Unary_Exp>
+                                        <Binary_Exp op="**i" typref="1">
+                                            <Integer_Literal value="2" typref="1" />
+                                            <Id value="s10" typref="1" />
+                                        </Binary_Exp>
+                                    </Binary_Exp>
+                                    <Integer_Literal value="1" typref="1" />
+                                </Binary_Exp>
+                                <Binary_Exp op="**i" typref="1">
+                                    <Integer_Literal value="2" typref="1" />
+                                    <Id value="s10" typref="1" />
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Unary_Exp>
+                    </Body>
+                </Quantified_Exp>
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="s11" typref="13" />
+            <Binary_Exp op="--&gt;" typref="14">
+                <Id value="BOOL" typref="15" />
+                <Id value="NAT" typref="0" />
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="s11" typref="13" />
+            <Nary_Exp op="{" typref="13">
+                <Binary_Exp op="|-&gt;" typref="16">
+                    <Boolean_Literal value="TRUE" typref="17" />
+                    <Integer_Literal value="1" typref="1" />
+                </Binary_Exp>
+                <Binary_Exp op="|-&gt;" typref="16">
+                    <Boolean_Literal value="FALSE" typref="17" />
+                    <Integer_Literal value="0" typref="1" />
+                </Binary_Exp>
+            </Nary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="inprp" hash="0" />
+    <Define name="inext" hash="0" />
+    <Define name="inv" hash="0" />
+    <Define name="ass" hash="0" />
+    <Define name="cst" hash="0" />
+    <Define name="sets" hash="3696533771510553791">
+        <Set>
+            <Id value="s0" typref="2" />
+        </Set>
+        <Set>
+            <Id value="s1" typref="3" />
+        </Set>
+        <Set>
+            <Id value="s2" typref="4" />
+        </Set>
+        <Set>
+            <Id value="s3" typref="5" />
+        </Set>
+        <Set>
+            <Id value="s4" typref="6" />
+        </Set>
+        <Set>
+            <Id value="s5" typref="7" />
+        </Set>
+        <Set>
+            <Id value="s6" typref="8" />
+        </Set>
+        <Set>
+            <Id value="s7" typref="9" />
+        </Set>
+    </Define>
+    <Proof_Obligation goalHash="13153385321329801881">
+        <Tag>s12</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="sets" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s8" typref="10" />
+                <Binary_Exp op="--&gt;" typref="11">
+                    <Binary_Exp op="*s" typref="12">
+                        <Id value="INTEGER" typref="0" />
+                        <Id value="NATURAL" typref="0" />
+                    </Binary_Exp>
+                    <Id value="INTEGER" typref="0" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="s9" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op=":">
+                <Id value="s10" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op=":">
+                <Id value="s9" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="5">
+            <Exp_Comparison op="&lt;i">
+                <Id value="s9" typref="1" />
+                <Integer_Literal value="0" typref="1" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s13</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Id value="s10" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s13</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Id value="s10" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s13</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Ref_Hyp num="5" />
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Id value="s10" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s13</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Ref_Hyp num="5" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Id value="s10" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="7048168350230949695">
+        <Tag>s14</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Integer_Literal value="2" typref="1" />
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s17</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="2" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="2" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s18</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="3" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="3" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s19</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="4" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="4" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s20</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="5" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="5" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s21</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="6" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="6" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s22</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="7" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="7" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s23</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="8" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="8" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s24</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="9" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="9" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s25</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="10" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="10" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s26</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="11" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="11" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s27</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="12" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="12" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s28</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="13" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="13" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s29</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="14" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="14" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s30</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="15" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="15" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s31</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="16" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="16" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s32</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="17" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="17" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s33</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="18" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="18" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s34</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="19" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="19" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s35</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="20" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="20" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s36</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="21" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="21" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s37</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="22" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="22" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s38</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="23" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="23" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s39</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="24" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="24" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s40</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="25" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="25" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s41</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="26" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="26" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s42</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="27" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="27" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s43</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="28" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="28" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s44</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="29" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="29" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2340866873810124207">
+        <Tag>s45</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="/=">
+                    <Binary_Exp op="**i" typref="1">
+                        <Integer_Literal value="2" typref="1" />
+                        <Integer_Literal value="30" typref="1" />
+                    </Binary_Exp>
+                    <Integer_Literal value="0" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="30" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="11140456955407357146">
+        <Tag>s46</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="1" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="1" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="1" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="13729788694246691043">
+        <Tag>s48</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="2" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="2" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="2" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="2" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="13385037233300737555">
+        <Tag>s49</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="3" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="3" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="3" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="3" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2703280147964898590">
+        <Tag>s50</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="4" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="4" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="4" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="4" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="13849950291675478717">
+        <Tag>s51</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="5" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="5" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="5" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="5" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="8792116045455867413">
+        <Tag>s52</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="6" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="6" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="6" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="6" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="7844437266674301321">
+        <Tag>s53</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="7" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="7" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="7" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="7" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="17831429089451918736">
+        <Tag>s54</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="8" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="8" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="8" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="8" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="11867698060072285574">
+        <Tag>s55</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="9" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="9" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="9" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="9" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="14100750906188177775">
+        <Tag>s56</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="10" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="10" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="10" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="10" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="11736786500160217898">
+        <Tag>s57</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="11" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="11" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="11" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="11" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="2182881515677133975">
+        <Tag>s58</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="12" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="12" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="12" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="12" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="13968791474852888304">
+        <Tag>s59</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="13" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="13" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="13" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="13" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="1369710999842362782">
+        <Tag>s60</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="14" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="14" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="14" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="14" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="5741064188938869151">
+        <Tag>s61</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="15" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="15" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="15" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="15" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="1505731348484980529">
+        <Tag>s62</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="16" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="16" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="16" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="16" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="5236766296928319606">
+        <Tag>s63</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="17" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="17" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="17" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="17" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="15151098049801707221">
+        <Tag>s64</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="18" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="18" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="18" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="18" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="1802821309248188362">
+        <Tag>s65</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="19" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="19" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="19" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="19" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="7581986540191818146">
+        <Tag>s66</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="20" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="20" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="20" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="20" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="13284440156121364686">
+        <Tag>s67</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="21" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="21" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="21" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="21" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="11871584271930817207">
+        <Tag>s68</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="22" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="22" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="22" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="22" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="18303201216945562848">
+        <Tag>s69</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="23" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="23" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="23" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="23" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="13364148286243861718">
+        <Tag>s70</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="24" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="24" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="24" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="24" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="8372978966234398706">
+        <Tag>s71</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="25" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="25" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="25" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="25" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="4814187196526050494">
+        <Tag>s72</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="26" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="26" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="26" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="26" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="10611170130204826689">
+        <Tag>s73</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="27" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="27" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="27" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="27" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="3079761497175693197">
+        <Tag>s74</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="28" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="28" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="28" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="28" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="3949986047803635624">
+        <Tag>s75</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="29" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="29" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="29" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="29" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="3610861908085835114">
+        <Tag>s76</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s15" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s47" suffix="1" typref="1" />
+                <Id value="INTEGER" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s15" typref="1" />
+                    <Binary_Exp op="*i" typref="1">
+                        <Id value="s47" suffix="1" typref="1" />
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="30" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Binary_Exp op=".." typref="0">
+                    <Integer_Literal value="0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Binary_Exp op="**i" typref="1">
+                            <Integer_Literal value="2" typref="1" />
+                            <Integer_Literal value="30" typref="1" />
+                        </Binary_Exp>
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Integer_Literal value="0" typref="1" />
+                    <Integer_Literal value="30" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s8" typref="10" />
+                    <Binary_Exp op="+-&gt;" typref="11">
+                        <Unary_Exp op="dom" typref="12">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s8" typref="10" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="|-&gt;" typref="18">
+                        <Id value="s15" typref="1" />
+                        <Integer_Literal value="30" typref="1" />
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="12">
+                        <Id value="s8" typref="10" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="12086749590191702186">
+        <Tag>s77</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Hypothesis>
+            <Exp_Comparison op=":">
+                <Id value="s78" typref="17" />
+                <Id value="BOOL" typref="15" />
+            </Exp_Comparison>
+        </Hypothesis>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s11" typref="13" />
+                    <Binary_Exp op="+-&gt;" typref="14">
+                        <Unary_Exp op="dom" typref="15">
+                            <Id value="s11" typref="13" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="0">
+                            <Id value="s11" typref="13" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s16</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s78" typref="17" />
+                    <Unary_Exp op="dom" typref="15">
+                        <Id value="s11" typref="13" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <TypeInfos>
+        <Type id="0">
+            <Unary_Exp op="POW">
+                <Id value="INTEGER" />
+            </Unary_Exp>
+        </Type>
+        <Type id="1">
+            <Id value="INTEGER" />
+        </Type>
+        <Type id="2">
+            <Unary_Exp op="POW">
+                <Id value="s0" />
+            </Unary_Exp>
+        </Type>
+        <Type id="3">
+            <Unary_Exp op="POW">
+                <Id value="s1" />
+            </Unary_Exp>
+        </Type>
+        <Type id="4">
+            <Unary_Exp op="POW">
+                <Id value="s2" />
+            </Unary_Exp>
+        </Type>
+        <Type id="5">
+            <Unary_Exp op="POW">
+                <Id value="s3" />
+            </Unary_Exp>
+        </Type>
+        <Type id="6">
+            <Unary_Exp op="POW">
+                <Id value="s4" />
+            </Unary_Exp>
+        </Type>
+        <Type id="7">
+            <Unary_Exp op="POW">
+                <Id value="s5" />
+            </Unary_Exp>
+        </Type>
+        <Type id="8">
+            <Unary_Exp op="POW">
+                <Id value="s6" />
+            </Unary_Exp>
+        </Type>
+        <Type id="9">
+            <Unary_Exp op="POW">
+                <Id value="s7" />
+            </Unary_Exp>
+        </Type>
+        <Type id="10">
+            <Unary_Exp op="POW">
+                <Binary_Exp op="*">
+                    <Binary_Exp op="*">
+                        <Id value="INTEGER" />
+                        <Id value="INTEGER" />
+                    </Binary_Exp>
+                    <Id value="INTEGER" />
+                </Binary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="11">
+            <Unary_Exp op="POW">
+                <Unary_Exp op="POW">
+                    <Binary_Exp op="*">
+                        <Binary_Exp op="*">
+                            <Id value="INTEGER" />
+                            <Id value="INTEGER" />
+                        </Binary_Exp>
+                        <Id value="INTEGER" />
+                    </Binary_Exp>
+                </Unary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="12">
+            <Unary_Exp op="POW">
+                <Binary_Exp op="*">
+                    <Id value="INTEGER" />
+                    <Id value="INTEGER" />
+                </Binary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="13">
+            <Unary_Exp op="POW">
+                <Binary_Exp op="*">
+                    <Id value="BOOL" />
+                    <Id value="INTEGER" />
+                </Binary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="14">
+            <Unary_Exp op="POW">
+                <Unary_Exp op="POW">
+                    <Binary_Exp op="*">
+                        <Id value="BOOL" />
+                        <Id value="INTEGER" />
+                    </Binary_Exp>
+                </Unary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="15">
+            <Unary_Exp op="POW">
+                <Id value="BOOL" />
+            </Unary_Exp>
+        </Type>
+        <Type id="16">
+            <Binary_Exp op="*">
+                <Id value="BOOL" />
+                <Id value="INTEGER" />
+            </Binary_Exp>
+        </Type>
+        <Type id="17">
+            <Id value="BOOL" />
+        </Type>
+        <Type id="18">
+            <Binary_Exp op="*">
+                <Id value="INTEGER" />
+                <Id value="INTEGER" />
+            </Binary_Exp>
+        </Type>
+    </TypeInfos>
+</Proof_Obligations>

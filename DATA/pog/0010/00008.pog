@@ -1,0 +1,1960 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+This work is licensed under a
+Creative Commons Attribution-NonCommercial 4.0 International License
+CC BY-NC 4.0
+See terms at https://creativecommons.org/licenses/by-nc/4.0/
+Copyright © CLEARSY 2019
+-->
+<Proof_Obligations xmlns="https://www.atelierb.eu/Formats/pog" version="1.0">
+    <Define name="B definitions" hash="13828030950441524962">
+        <Exp_Comparison op="=">
+            <Id value="NAT" typref="0" />
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="0" typref="1" />
+                <Id value="MAXINT" typref="1" />
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="INT" typref="0" />
+            <Binary_Exp op=".." typref="0">
+                <Id value="MININT" typref="1" />
+                <Id value="MAXINT" typref="1" />
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ctx" hash="0" />
+    <Define name="seext" hash="0" />
+    <Define name="lprp" hash="8828706691088705315">
+        <Exp_Comparison op=":">
+            <Id value="s0" typref="1" />
+            <Id value="NATURAL" typref="0" />
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="s1" typref="1" />
+            <Id value="NATURAL" typref="0" />
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="s2" typref="1" />
+            <Id value="NATURAL" typref="0" />
+        </Exp_Comparison>
+        <Exp_Comparison op="&gt;=i">
+            <Id value="s1" typref="1" />
+            <Id value="s2" typref="1" />
+        </Exp_Comparison>
+    </Define>
+    <Define name="inprp" hash="0" />
+    <Define name="inext" hash="0" />
+    <Define name="inv" hash="3319668660087478059">
+        <Exp_Comparison op=":">
+            <Id value="s3" typref="1" />
+            <Id value="NATURAL" typref="0" />
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="s4" typref="2" />
+            <Binary_Exp op="+-&gt;" typref="3">
+                <Binary_Exp op=".." typref="0">
+                    <Id value="s0" typref="1" />
+                    <Id value="s3" typref="1" />
+                </Binary_Exp>
+                <Id value="BOOL" typref="4" />
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="s5" typref="2" />
+            <Binary_Exp op="+-&gt;" typref="3">
+                <Binary_Exp op=".." typref="0">
+                    <Id value="s0" typref="1" />
+                    <Id value="s3" typref="1" />
+                </Binary_Exp>
+                <Id value="BOOL" typref="4" />
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="s6" typref="2" />
+            <Binary_Exp op="+-&gt;" typref="3">
+                <Binary_Exp op=".." typref="0">
+                    <Id value="s0" typref="1" />
+                    <Id value="s3" typref="1" />
+                </Binary_Exp>
+                <Id value="BOOL" typref="4" />
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op=":">
+            <Id value="s7" typref="2" />
+            <Binary_Exp op="+-&gt;" typref="3">
+                <Binary_Exp op=".." typref="0">
+                    <Id value="s0" typref="1" />
+                    <Id value="s3" typref="1" />
+                </Binary_Exp>
+                <Id value="BOOL" typref="4" />
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="&lt;=i">
+            <Id value="s0" typref="1" />
+            <Id value="s3" typref="1" />
+        </Exp_Comparison>
+        <Exp_Comparison op="&lt;:">
+            <Binary_Exp op=".." typref="0">
+                <Id value="s0" typref="1" />
+                <Binary_Exp op="-i" typref="1">
+                    <Id value="s3" typref="1" />
+                    <Integer_Literal value="1" typref="1" />
+                </Binary_Exp>
+            </Binary_Exp>
+            <Unary_Exp op="dom" typref="0">
+                <Id value="s7" typref="2" />
+            </Unary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="&lt;:">
+            <Id value="s5" typref="2" />
+            <Id value="s4" typref="2" />
+        </Exp_Comparison>
+        <Exp_Comparison op="&lt;:">
+            <Id value="s6" typref="2" />
+            <Id value="s5" typref="2" />
+        </Exp_Comparison>
+        <Quantified_Pred type="!">
+            <Variables>
+                <Id value="s8" typref="1" />
+            </Variables>
+            <Body>
+                <Binary_Pred op="=&gt;">
+                    <Nary_Pred op="&amp;">
+                        <Exp_Comparison op=":">
+                            <Id value="s8" typref="1" />
+                            <Unary_Exp op="dom" typref="0">
+                                <Id value="s7" typref="2" />
+                            </Unary_Exp>
+                        </Exp_Comparison>
+                        <Exp_Comparison op="=">
+                            <Binary_Exp op="(" typref="5">
+                                <Id value="s7" typref="2" />
+                                <Id value="s8" typref="1" />
+                            </Binary_Exp>
+                            <Boolean_Literal value="TRUE" typref="5" />
+                        </Exp_Comparison>
+                    </Nary_Pred>
+                    <Exp_Comparison op=":">
+                        <Boolean_Literal value="TRUE" typref="5" />
+                        <Binary_Exp op="[" typref="4">
+                            <Id value="s6" typref="2" />
+                            <Binary_Exp op=".." typref="0">
+                                <Binary_Exp op="-i" typref="1">
+                                    <Id value="s8" typref="1" />
+                                    <Id value="s2" typref="1" />
+                                </Binary_Exp>
+                                <Id value="s8" typref="1" />
+                            </Binary_Exp>
+                        </Binary_Exp>
+                    </Exp_Comparison>
+                </Binary_Pred>
+            </Body>
+        </Quantified_Pred>
+        <Quantified_Pred type="!">
+            <Variables>
+                <Id value="s9" typref="1" />
+            </Variables>
+            <Body>
+                <Binary_Pred op="=&gt;">
+                    <Nary_Pred op="&amp;">
+                        <Exp_Comparison op=":">
+                            <Id value="s9" typref="1" />
+                            <Unary_Exp op="dom" typref="0">
+                                <Id value="s4" typref="2" />
+                            </Unary_Exp>
+                        </Exp_Comparison>
+                        <Exp_Comparison op="=">
+                            <Binary_Exp op="(" typref="5">
+                                <Id value="s4" typref="2" />
+                                <Id value="s9" typref="1" />
+                            </Binary_Exp>
+                            <Boolean_Literal value="FALSE" typref="5" />
+                        </Exp_Comparison>
+                    </Nary_Pred>
+                    <Exp_Comparison op="/:">
+                        <Boolean_Literal value="TRUE" typref="5" />
+                        <Binary_Exp op="[" typref="4">
+                            <Id value="s5" typref="2" />
+                            <Binary_Exp op=".." typref="0">
+                                <Id value="s9" typref="1" />
+                                <Binary_Exp op="+i" typref="1">
+                                    <Id value="s9" typref="1" />
+                                    <Id value="s1" typref="1" />
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Binary_Exp>
+                    </Exp_Comparison>
+                </Binary_Pred>
+            </Body>
+        </Quantified_Pred>
+    </Define>
+    <Define name="ass" hash="3726356209263171894">
+        <Quantified_Pred type="!">
+            <Variables>
+                <Id value="s10" typref="1" />
+            </Variables>
+            <Body>
+                <Binary_Pred op="=&gt;">
+                    <Nary_Pred op="&amp;">
+                        <Exp_Comparison op=":">
+                            <Id value="s10" typref="1" />
+                            <Binary_Exp op=".." typref="0">
+                                <Id value="s0" typref="1" />
+                                <Id value="s3" typref="1" />
+                            </Binary_Exp>
+                        </Exp_Comparison>
+                        <Exp_Comparison op=":">
+                            <Id value="s10" typref="1" />
+                            <Unary_Exp op="dom" typref="0">
+                                <Id value="s4" typref="2" />
+                            </Unary_Exp>
+                        </Exp_Comparison>
+                        <Exp_Comparison op="=">
+                            <Binary_Exp op="(" typref="5">
+                                <Id value="s4" typref="2" />
+                                <Id value="s10" typref="1" />
+                            </Binary_Exp>
+                            <Boolean_Literal value="FALSE" typref="5" />
+                        </Exp_Comparison>
+                    </Nary_Pred>
+                    <Nary_Pred op="or">
+                        <Exp_Comparison op="&lt;=i">
+                            <Id value="s3" typref="1" />
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="s10" typref="1" />
+                                <Id value="s2" typref="1" />
+                            </Binary_Exp>
+                        </Exp_Comparison>
+                        <Exp_Comparison op=":">
+                            <Boolean_Literal value="FALSE" typref="5" />
+                            <Binary_Exp op="[" typref="4">
+                                <Id value="s7" typref="2" />
+                                <Binary_Exp op=".." typref="0">
+                                    <Id value="s10" typref="1" />
+                                    <Binary_Exp op="+i" typref="1">
+                                        <Id value="s10" typref="1" />
+                                        <Id value="s2" typref="1" />
+                                    </Binary_Exp>
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Exp_Comparison>
+                    </Nary_Pred>
+                </Binary_Pred>
+            </Body>
+        </Quantified_Pred>
+    </Define>
+    <Define name="cst" hash="0" />
+    <Define name="sets" hash="0" />
+    <Proof_Obligation goalHash="1843451999567360960">
+        <Tag>s11</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s10" typref="1" />
+                <Binary_Exp op=".." typref="0">
+                    <Id value="s0" typref="1" />
+                    <Id value="s3" typref="1" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="s10" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s4" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op="=">
+                <Binary_Exp op="(" typref="5">
+                    <Id value="s4" typref="2" />
+                    <Id value="s10" typref="1" />
+                </Binary_Exp>
+                <Boolean_Literal value="FALSE" typref="5" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s12</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Goal>
+                <Nary_Pred op="or">
+                    <Exp_Comparison op="&lt;=i">
+                        <Id value="s3" typref="1" />
+                        <Binary_Exp op="+i" typref="1">
+                            <Id value="s10" typref="1" />
+                            <Id value="s2" typref="1" />
+                        </Binary_Exp>
+                    </Exp_Comparison>
+                    <Exp_Comparison op=":">
+                        <Boolean_Literal value="FALSE" typref="5" />
+                        <Binary_Exp op="[" typref="4">
+                            <Id value="s7" typref="2" />
+                            <Binary_Exp op=".." typref="0">
+                                <Id value="s10" typref="1" />
+                                <Binary_Exp op="+i" typref="1">
+                                    <Id value="s10" typref="1" />
+                                    <Id value="s2" typref="1" />
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Binary_Exp>
+                    </Exp_Comparison>
+                </Nary_Pred>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="8917635753229142124">
+        <Tag>s13</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s3" suffix="1" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="s4" suffix="1" typref="2" />
+                <Binary_Exp op="+-&gt;" typref="3">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Id value="s3" suffix="1" typref="1" />
+                    </Binary_Exp>
+                    <Id value="BOOL" typref="4" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op=":">
+                <Id value="s5" suffix="1" typref="2" />
+                <Binary_Exp op="+-&gt;" typref="3">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Id value="s3" suffix="1" typref="1" />
+                    </Binary_Exp>
+                    <Id value="BOOL" typref="4" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op=":">
+                <Id value="s6" suffix="1" typref="2" />
+                <Binary_Exp op="+-&gt;" typref="3">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Id value="s3" suffix="1" typref="1" />
+                    </Binary_Exp>
+                    <Id value="BOOL" typref="4" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="5">
+            <Exp_Comparison op=":">
+                <Id value="s7" suffix="1" typref="2" />
+                <Binary_Exp op="+-&gt;" typref="3">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Id value="s3" suffix="1" typref="1" />
+                    </Binary_Exp>
+                    <Id value="BOOL" typref="4" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="6">
+            <Exp_Comparison op="&lt;=i">
+                <Id value="s0" typref="1" />
+                <Id value="s3" suffix="1" typref="1" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="7">
+            <Exp_Comparison op="&lt;:">
+                <Binary_Exp op=".." typref="0">
+                    <Id value="s0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Id value="s3" suffix="1" typref="1" />
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s7" suffix="1" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="8">
+            <Exp_Comparison op="&lt;:">
+                <Id value="s5" suffix="1" typref="2" />
+                <Id value="s4" suffix="1" typref="2" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="9">
+            <Exp_Comparison op="&lt;:">
+                <Id value="s6" suffix="1" typref="2" />
+                <Id value="s5" suffix="1" typref="2" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="10">
+            <Quantified_Pred type="!">
+                <Variables>
+                    <Id value="s8" typref="1" />
+                </Variables>
+                <Body>
+                    <Binary_Pred op="=&gt;">
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op=":">
+                                <Id value="s8" typref="1" />
+                                <Unary_Exp op="dom" typref="0">
+                                    <Id value="s7" suffix="1" typref="2" />
+                                </Unary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Binary_Exp op="(" typref="5">
+                                    <Id value="s7" suffix="1" typref="2" />
+                                    <Id value="s8" typref="1" />
+                                </Binary_Exp>
+                                <Boolean_Literal value="TRUE" typref="5" />
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                        <Exp_Comparison op=":">
+                            <Boolean_Literal value="TRUE" typref="5" />
+                            <Binary_Exp op="[" typref="4">
+                                <Id value="s6" suffix="1" typref="2" />
+                                <Binary_Exp op=".." typref="0">
+                                    <Binary_Exp op="-i" typref="1">
+                                        <Id value="s8" typref="1" />
+                                        <Id value="s2" typref="1" />
+                                    </Binary_Exp>
+                                    <Id value="s8" typref="1" />
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Exp_Comparison>
+                    </Binary_Pred>
+                </Body>
+            </Quantified_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="11">
+            <Quantified_Pred type="!">
+                <Variables>
+                    <Id value="s9" typref="1" />
+                </Variables>
+                <Body>
+                    <Binary_Pred op="=&gt;">
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op=":">
+                                <Id value="s9" typref="1" />
+                                <Unary_Exp op="dom" typref="0">
+                                    <Id value="s4" suffix="1" typref="2" />
+                                </Unary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Binary_Exp op="(" typref="5">
+                                    <Id value="s4" suffix="1" typref="2" />
+                                    <Id value="s9" typref="1" />
+                                </Binary_Exp>
+                                <Boolean_Literal value="FALSE" typref="5" />
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                        <Exp_Comparison op="/:">
+                            <Boolean_Literal value="TRUE" typref="5" />
+                            <Binary_Exp op="[" typref="4">
+                                <Id value="s5" suffix="1" typref="2" />
+                                <Binary_Exp op=".." typref="0">
+                                    <Id value="s9" typref="1" />
+                                    <Binary_Exp op="+i" typref="1">
+                                        <Id value="s9" typref="1" />
+                                        <Id value="s1" typref="1" />
+                                    </Binary_Exp>
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Exp_Comparison>
+                    </Binary_Pred>
+                </Body>
+            </Quantified_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="12">
+            <Exp_Comparison op=":">
+                <Id value="s8" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s7" suffix="1" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="13">
+            <Exp_Comparison op="=">
+                <Binary_Exp op="(" typref="5">
+                    <Id value="s7" suffix="1" typref="2" />
+                    <Id value="s8" typref="1" />
+                </Binary_Exp>
+                <Boolean_Literal value="TRUE" typref="5" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="14">
+            <Exp_Comparison op=":">
+                <Id value="s9" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s4" suffix="1" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="15">
+            <Exp_Comparison op="=">
+                <Binary_Exp op="(" typref="5">
+                    <Id value="s4" suffix="1" typref="2" />
+                    <Id value="s9" typref="1" />
+                </Binary_Exp>
+                <Boolean_Literal value="FALSE" typref="5" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Ref_Hyp num="5" />
+            <Ref_Hyp num="6" />
+            <Ref_Hyp num="7" />
+            <Ref_Hyp num="8" />
+            <Ref_Hyp num="9" />
+            <Ref_Hyp num="10" />
+            <Ref_Hyp num="11" />
+            <Ref_Hyp num="14" />
+            <Ref_Hyp num="15" />
+            <Goal>
+                <Exp_Comparison op="/:">
+                    <Boolean_Literal value="TRUE" typref="5" />
+                    <Binary_Exp op="[" typref="4">
+                        <Id value="s5" suffix="1" typref="2" />
+                        <Binary_Exp op=".." typref="0">
+                            <Id value="s9" typref="1" />
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="s9" typref="1" />
+                                <Id value="s1" typref="1" />
+                            </Binary_Exp>
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Ref_Hyp num="5" />
+            <Ref_Hyp num="6" />
+            <Ref_Hyp num="7" />
+            <Ref_Hyp num="8" />
+            <Ref_Hyp num="9" />
+            <Ref_Hyp num="10" />
+            <Ref_Hyp num="11" />
+            <Ref_Hyp num="12" />
+            <Ref_Hyp num="13" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Boolean_Literal value="TRUE" typref="5" />
+                    <Binary_Exp op="[" typref="4">
+                        <Id value="s6" suffix="1" typref="2" />
+                        <Binary_Exp op=".." typref="0">
+                            <Binary_Exp op="-i" typref="1">
+                                <Id value="s8" typref="1" />
+                                <Id value="s2" typref="1" />
+                            </Binary_Exp>
+                            <Id value="s8" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="8917635753229142124">
+        <Tag>s15</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s3" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s7" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s5" typref="2" />
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Binary_Exp op=".." typref="0">
+                            <Id value="s0" typref="1" />
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="s3" typref="1" />
+                                <Integer_Literal value="1" typref="1" />
+                            </Binary_Exp>
+                        </Binary_Exp>
+                        <Id value="BOOL" typref="4" />
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s6" typref="2" />
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Binary_Exp op=".." typref="0">
+                            <Id value="s0" typref="1" />
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="s3" typref="1" />
+                                <Integer_Literal value="1" typref="1" />
+                            </Binary_Exp>
+                        </Binary_Exp>
+                        <Id value="BOOL" typref="4" />
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s4" typref="2" />
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Binary_Exp op=".." typref="0">
+                            <Id value="s0" typref="1" />
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="s3" typref="1" />
+                                <Integer_Literal value="1" typref="1" />
+                            </Binary_Exp>
+                        </Binary_Exp>
+                        <Id value="BOOL" typref="4" />
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s7" typref="2" />
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Binary_Exp op=".." typref="0">
+                            <Id value="s0" typref="1" />
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="s3" typref="1" />
+                                <Integer_Literal value="1" typref="1" />
+                            </Binary_Exp>
+                        </Binary_Exp>
+                        <Id value="BOOL" typref="4" />
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="+i" typref="1">
+                        <Id value="s3" typref="1" />
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                    <Id value="NATURAL" typref="0" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;:">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Binary_Exp op="-i" typref="1">
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="s3" typref="1" />
+                                <Integer_Literal value="1" typref="1" />
+                            </Binary_Exp>
+                            <Integer_Literal value="1" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="0">
+                        <Id value="s7" typref="2" />
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Goal>
+                <Exp_Comparison op="&lt;=i">
+                    <Id value="s0" typref="1" />
+                    <Binary_Exp op="+i" typref="1">
+                        <Id value="s3" typref="1" />
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="8917635753229142124">
+        <Tag>s16</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op="/:">
+                <Id value="s3" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s4" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="s17" typref="5" />
+                <Id value="BOOL" typref="4" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op=":">
+                <Id value="s9" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Binary_Exp op="&lt;+" typref="2">
+                        <Id value="s4" typref="2" />
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="6">
+                                <Id value="s3" typref="1" />
+                                <Id value="s17" typref="5" />
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op="=">
+                <Binary_Exp op="(" typref="5">
+                    <Binary_Exp op="&lt;+" typref="2">
+                        <Id value="s4" typref="2" />
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="6">
+                                <Id value="s3" typref="1" />
+                                <Id value="s17" typref="5" />
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                    <Id value="s9" typref="1" />
+                </Binary_Exp>
+                <Boolean_Literal value="FALSE" typref="5" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="&lt;+" typref="2">
+                        <Id value="s4" typref="2" />
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="6">
+                                <Id value="s3" typref="1" />
+                                <Id value="s17" typref="5" />
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Binary_Exp op=".." typref="0">
+                            <Id value="s0" typref="1" />
+                            <Id value="s3" typref="1" />
+                        </Binary_Exp>
+                        <Id value="BOOL" typref="4" />
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op="&lt;:">
+                    <Id value="s5" typref="2" />
+                    <Binary_Exp op="&lt;+" typref="2">
+                        <Id value="s4" typref="2" />
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="6">
+                                <Id value="s3" typref="1" />
+                                <Id value="s17" typref="5" />
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Goal>
+                <Exp_Comparison op="/:">
+                    <Boolean_Literal value="TRUE" typref="5" />
+                    <Binary_Exp op="[" typref="4">
+                        <Id value="s5" typref="2" />
+                        <Binary_Exp op=".." typref="0">
+                            <Id value="s9" typref="1" />
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="s9" typref="1" />
+                                <Id value="s1" typref="1" />
+                            </Binary_Exp>
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="8917635753229142124">
+        <Tag>s18</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s9" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="s9" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s4" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Binary_Pred op="=&gt;">
+                <Exp_Comparison op="=">
+                    <Binary_Exp op="(" typref="5">
+                        <Id value="s4" typref="2" />
+                        <Id value="s9" typref="1" />
+                    </Binary_Exp>
+                    <Boolean_Literal value="TRUE" typref="5" />
+                </Exp_Comparison>
+                <Exp_Comparison op="/:">
+                    <Boolean_Literal value="FALSE" typref="5" />
+                    <Binary_Exp op="[" typref="4">
+                        <Id value="s4" typref="2" />
+                        <Binary_Exp op=".." typref="0">
+                            <Binary_Exp op="-i" typref="1">
+                                <Id value="s9" typref="1" />
+                                <Id value="s1" typref="1" />
+                            </Binary_Exp>
+                            <Id value="s9" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Binary_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op=":">
+                <Id value="s9" suffix="1" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s4" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="5">
+            <Exp_Comparison op="=">
+                <Binary_Exp op="(" typref="5">
+                    <Id value="s4" typref="2" />
+                    <Id value="s9" suffix="1" typref="1" />
+                </Binary_Exp>
+                <Boolean_Literal value="FALSE" typref="5" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="&lt;+" typref="2">
+                        <Id value="s5" typref="2" />
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="6">
+                                <Id value="s9" typref="1" />
+                                <Binary_Exp op="(" typref="5">
+                                    <Id value="s4" typref="2" />
+                                    <Id value="s9" typref="1" />
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Binary_Exp op=".." typref="0">
+                            <Id value="s0" typref="1" />
+                            <Id value="s3" typref="1" />
+                        </Binary_Exp>
+                        <Id value="BOOL" typref="4" />
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Goal>
+                <Exp_Comparison op="&lt;:">
+                    <Id value="s6" typref="2" />
+                    <Binary_Exp op="&lt;+" typref="2">
+                        <Id value="s5" typref="2" />
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="6">
+                                <Id value="s9" typref="1" />
+                                <Binary_Exp op="(" typref="5">
+                                    <Id value="s4" typref="2" />
+                                    <Id value="s9" typref="1" />
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Goal>
+                <Exp_Comparison op="&lt;:">
+                    <Binary_Exp op="&lt;+" typref="2">
+                        <Id value="s5" typref="2" />
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="6">
+                                <Id value="s9" typref="1" />
+                                <Binary_Exp op="(" typref="5">
+                                    <Id value="s4" typref="2" />
+                                    <Id value="s9" typref="1" />
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                    <Id value="s4" typref="2" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Ref_Hyp num="5" />
+            <Goal>
+                <Exp_Comparison op="/:">
+                    <Boolean_Literal value="TRUE" typref="5" />
+                    <Binary_Exp op="[" typref="4">
+                        <Binary_Exp op="&lt;+" typref="2">
+                            <Id value="s5" typref="2" />
+                            <Nary_Exp op="{" typref="2">
+                                <Binary_Exp op="|-&gt;" typref="6">
+                                    <Id value="s9" typref="1" />
+                                    <Binary_Exp op="(" typref="5">
+                                        <Id value="s4" typref="2" />
+                                        <Id value="s9" typref="1" />
+                                    </Binary_Exp>
+                                </Binary_Exp>
+                            </Nary_Exp>
+                        </Binary_Exp>
+                        <Binary_Exp op=".." typref="0">
+                            <Id value="s9" suffix="1" typref="1" />
+                            <Binary_Exp op="+i" typref="1">
+                                <Id value="s9" suffix="1" typref="1" />
+                                <Id value="s1" typref="1" />
+                            </Binary_Exp>
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="8917635753229142124">
+        <Tag>s19</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s8" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="s8" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s5" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op=":">
+                <Id value="s8" suffix="1" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s7" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op="=">
+                <Binary_Exp op="(" typref="5">
+                    <Id value="s7" typref="2" />
+                    <Id value="s8" suffix="1" typref="1" />
+                </Binary_Exp>
+                <Boolean_Literal value="TRUE" typref="5" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="&lt;+" typref="2">
+                        <Id value="s6" typref="2" />
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="6">
+                                <Id value="s8" typref="1" />
+                                <Binary_Exp op="(" typref="5">
+                                    <Id value="s5" typref="2" />
+                                    <Id value="s8" typref="1" />
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Binary_Exp op=".." typref="0">
+                            <Id value="s0" typref="1" />
+                            <Id value="s3" typref="1" />
+                        </Binary_Exp>
+                        <Id value="BOOL" typref="4" />
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op="&lt;:">
+                    <Binary_Exp op="&lt;+" typref="2">
+                        <Id value="s6" typref="2" />
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="6">
+                                <Id value="s8" typref="1" />
+                                <Binary_Exp op="(" typref="5">
+                                    <Id value="s5" typref="2" />
+                                    <Id value="s8" typref="1" />
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                    <Id value="s5" typref="2" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Boolean_Literal value="TRUE" typref="5" />
+                    <Binary_Exp op="[" typref="4">
+                        <Binary_Exp op="&lt;+" typref="2">
+                            <Id value="s6" typref="2" />
+                            <Nary_Exp op="{" typref="2">
+                                <Binary_Exp op="|-&gt;" typref="6">
+                                    <Id value="s8" typref="1" />
+                                    <Binary_Exp op="(" typref="5">
+                                        <Id value="s5" typref="2" />
+                                        <Id value="s8" typref="1" />
+                                    </Binary_Exp>
+                                </Binary_Exp>
+                            </Nary_Exp>
+                        </Binary_Exp>
+                        <Binary_Exp op=".." typref="0">
+                            <Binary_Exp op="-i" typref="1">
+                                <Id value="s8" suffix="1" typref="1" />
+                                <Id value="s2" typref="1" />
+                            </Binary_Exp>
+                            <Id value="s8" suffix="1" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="8917635753229142124">
+        <Tag>s20</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s21" typref="5" />
+                <Id value="BOOL" typref="4" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Binary_Pred op="=&gt;">
+                <Exp_Comparison op="/:">
+                    <Boolean_Literal value="TRUE" typref="5" />
+                    <Binary_Exp op="[" typref="4">
+                        <Id value="s6" typref="2" />
+                        <Binary_Exp op=".." typref="0">
+                            <Binary_Exp op="-i" typref="1">
+                                <Id value="s3" typref="1" />
+                                <Id value="s2" typref="1" />
+                            </Binary_Exp>
+                            <Id value="s3" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+                <Exp_Comparison op="=">
+                    <Id value="s21" typref="5" />
+                    <Boolean_Literal value="FALSE" typref="5" />
+                </Exp_Comparison>
+            </Binary_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op=":">
+                <Id value="s8" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Binary_Exp op="&lt;+" typref="2">
+                        <Id value="s7" typref="2" />
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="6">
+                                <Id value="s3" typref="1" />
+                                <Id value="s21" typref="5" />
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op="=">
+                <Binary_Exp op="(" typref="5">
+                    <Binary_Exp op="&lt;+" typref="2">
+                        <Id value="s7" typref="2" />
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="6">
+                                <Id value="s3" typref="1" />
+                                <Id value="s21" typref="5" />
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                    <Id value="s8" typref="1" />
+                </Binary_Exp>
+                <Boolean_Literal value="TRUE" typref="5" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Binary_Exp op="&lt;+" typref="2">
+                        <Id value="s7" typref="2" />
+                        <Nary_Exp op="{" typref="2">
+                            <Binary_Exp op="|-&gt;" typref="6">
+                                <Id value="s3" typref="1" />
+                                <Id value="s21" typref="5" />
+                            </Binary_Exp>
+                        </Nary_Exp>
+                    </Binary_Exp>
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Binary_Exp op=".." typref="0">
+                            <Id value="s0" typref="1" />
+                            <Id value="s3" typref="1" />
+                        </Binary_Exp>
+                        <Id value="BOOL" typref="4" />
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op="&lt;:">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Binary_Exp op="-i" typref="1">
+                            <Id value="s3" typref="1" />
+                            <Integer_Literal value="1" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                    <Unary_Exp op="dom" typref="0">
+                        <Binary_Exp op="&lt;+" typref="2">
+                            <Id value="s7" typref="2" />
+                            <Nary_Exp op="{" typref="2">
+                                <Binary_Exp op="|-&gt;" typref="6">
+                                    <Id value="s3" typref="1" />
+                                    <Id value="s21" typref="5" />
+                                </Binary_Exp>
+                            </Nary_Exp>
+                        </Binary_Exp>
+                    </Unary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s14</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Boolean_Literal value="TRUE" typref="5" />
+                    <Binary_Exp op="[" typref="4">
+                        <Id value="s6" typref="2" />
+                        <Binary_Exp op=".." typref="0">
+                            <Binary_Exp op="-i" typref="1">
+                                <Id value="s8" typref="1" />
+                                <Id value="s2" typref="1" />
+                            </Binary_Exp>
+                            <Id value="s8" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="3319668660087478059">
+        <Tag>s22</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s3" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="s4" typref="2" />
+                <Binary_Exp op="+-&gt;" typref="3">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Id value="s3" typref="1" />
+                    </Binary_Exp>
+                    <Id value="BOOL" typref="4" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op=":">
+                <Id value="s5" typref="2" />
+                <Binary_Exp op="+-&gt;" typref="3">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Id value="s3" typref="1" />
+                    </Binary_Exp>
+                    <Id value="BOOL" typref="4" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op=":">
+                <Id value="s6" typref="2" />
+                <Binary_Exp op="+-&gt;" typref="3">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Id value="s3" typref="1" />
+                    </Binary_Exp>
+                    <Id value="BOOL" typref="4" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="5">
+            <Exp_Comparison op=":">
+                <Id value="s7" typref="2" />
+                <Binary_Exp op="+-&gt;" typref="3">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Id value="s3" typref="1" />
+                    </Binary_Exp>
+                    <Id value="BOOL" typref="4" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="6">
+            <Exp_Comparison op="&lt;=i">
+                <Id value="s0" typref="1" />
+                <Id value="s3" typref="1" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="7">
+            <Exp_Comparison op="&lt;:">
+                <Binary_Exp op=".." typref="0">
+                    <Id value="s0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Id value="s3" typref="1" />
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s7" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="8">
+            <Exp_Comparison op="&lt;:">
+                <Id value="s5" typref="2" />
+                <Id value="s4" typref="2" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="9">
+            <Exp_Comparison op="&lt;:">
+                <Id value="s6" typref="2" />
+                <Id value="s5" typref="2" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="10">
+            <Exp_Comparison op=":">
+                <Id value="s8" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s7" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="11">
+            <Quantified_Pred type="!">
+                <Variables>
+                    <Id value="s8" typref="1" />
+                </Variables>
+                <Body>
+                    <Binary_Pred op="=&gt;">
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op=":">
+                                <Id value="s8" typref="1" />
+                                <Unary_Exp op="dom" typref="0">
+                                    <Id value="s7" typref="2" />
+                                </Unary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Binary_Exp op="(" typref="5">
+                                    <Id value="s7" typref="2" />
+                                    <Id value="s8" typref="1" />
+                                </Binary_Exp>
+                                <Boolean_Literal value="TRUE" typref="5" />
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                        <Exp_Comparison op=":">
+                            <Boolean_Literal value="TRUE" typref="5" />
+                            <Binary_Exp op="[" typref="4">
+                                <Id value="s6" typref="2" />
+                                <Binary_Exp op=".." typref="0">
+                                    <Binary_Exp op="-i" typref="1">
+                                        <Id value="s8" typref="1" />
+                                        <Id value="s2" typref="1" />
+                                    </Binary_Exp>
+                                    <Id value="s8" typref="1" />
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Exp_Comparison>
+                    </Binary_Pred>
+                </Body>
+            </Quantified_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="12">
+            <Exp_Comparison op=":">
+                <Id value="s9" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s4" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s23</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Ref_Hyp num="5" />
+            <Ref_Hyp num="6" />
+            <Ref_Hyp num="7" />
+            <Ref_Hyp num="8" />
+            <Ref_Hyp num="9" />
+            <Ref_Hyp num="10" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s7" typref="2" />
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Unary_Exp op="dom" typref="0">
+                            <Id value="s7" typref="2" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="4">
+                            <Id value="s7" typref="2" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s23</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Ref_Hyp num="5" />
+            <Ref_Hyp num="6" />
+            <Ref_Hyp num="7" />
+            <Ref_Hyp num="8" />
+            <Ref_Hyp num="9" />
+            <Ref_Hyp num="11" />
+            <Ref_Hyp num="12" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s4" typref="2" />
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Unary_Exp op="dom" typref="0">
+                            <Id value="s4" typref="2" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="4">
+                            <Id value="s4" typref="2" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="3726356209263171894">
+        <Tag>s24</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s10" typref="1" />
+                <Binary_Exp op=".." typref="0">
+                    <Id value="s0" typref="1" />
+                    <Id value="s3" typref="1" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="s10" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s4" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s25</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s4" typref="2" />
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Unary_Exp op="dom" typref="0">
+                            <Id value="s4" typref="2" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="4">
+                            <Id value="s4" typref="2" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="4157241470449833055">
+        <Tag>s26</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s3" suffix="1" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="s4" suffix="1" typref="2" />
+                <Binary_Exp op="+-&gt;" typref="3">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Id value="s3" suffix="1" typref="1" />
+                    </Binary_Exp>
+                    <Id value="BOOL" typref="4" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op=":">
+                <Id value="s5" suffix="1" typref="2" />
+                <Binary_Exp op="+-&gt;" typref="3">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Id value="s3" suffix="1" typref="1" />
+                    </Binary_Exp>
+                    <Id value="BOOL" typref="4" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op=":">
+                <Id value="s6" suffix="1" typref="2" />
+                <Binary_Exp op="+-&gt;" typref="3">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Id value="s3" suffix="1" typref="1" />
+                    </Binary_Exp>
+                    <Id value="BOOL" typref="4" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="5">
+            <Exp_Comparison op=":">
+                <Id value="s7" suffix="1" typref="2" />
+                <Binary_Exp op="+-&gt;" typref="3">
+                    <Binary_Exp op=".." typref="0">
+                        <Id value="s0" typref="1" />
+                        <Id value="s3" suffix="1" typref="1" />
+                    </Binary_Exp>
+                    <Id value="BOOL" typref="4" />
+                </Binary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="6">
+            <Exp_Comparison op="&lt;=i">
+                <Id value="s0" typref="1" />
+                <Id value="s3" suffix="1" typref="1" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="7">
+            <Exp_Comparison op="&lt;:">
+                <Binary_Exp op=".." typref="0">
+                    <Id value="s0" typref="1" />
+                    <Binary_Exp op="-i" typref="1">
+                        <Id value="s3" suffix="1" typref="1" />
+                        <Integer_Literal value="1" typref="1" />
+                    </Binary_Exp>
+                </Binary_Exp>
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s7" suffix="1" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="8">
+            <Exp_Comparison op="&lt;:">
+                <Id value="s5" suffix="1" typref="2" />
+                <Id value="s4" suffix="1" typref="2" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="9">
+            <Exp_Comparison op="&lt;:">
+                <Id value="s6" suffix="1" typref="2" />
+                <Id value="s5" suffix="1" typref="2" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="10">
+            <Exp_Comparison op=":">
+                <Id value="s8" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s7" suffix="1" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="11">
+            <Quantified_Pred type="!">
+                <Variables>
+                    <Id value="s8" typref="1" />
+                </Variables>
+                <Body>
+                    <Binary_Pred op="=&gt;">
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op=":">
+                                <Id value="s8" typref="1" />
+                                <Unary_Exp op="dom" typref="0">
+                                    <Id value="s7" suffix="1" typref="2" />
+                                </Unary_Exp>
+                            </Exp_Comparison>
+                            <Exp_Comparison op="=">
+                                <Binary_Exp op="(" typref="5">
+                                    <Id value="s7" suffix="1" typref="2" />
+                                    <Id value="s8" typref="1" />
+                                </Binary_Exp>
+                                <Boolean_Literal value="TRUE" typref="5" />
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                        <Exp_Comparison op=":">
+                            <Boolean_Literal value="TRUE" typref="5" />
+                            <Binary_Exp op="[" typref="4">
+                                <Id value="s6" suffix="1" typref="2" />
+                                <Binary_Exp op=".." typref="0">
+                                    <Binary_Exp op="-i" typref="1">
+                                        <Id value="s8" typref="1" />
+                                        <Id value="s2" typref="1" />
+                                    </Binary_Exp>
+                                    <Id value="s8" typref="1" />
+                                </Binary_Exp>
+                            </Binary_Exp>
+                        </Exp_Comparison>
+                    </Binary_Pred>
+                </Body>
+            </Quantified_Pred>
+        </Local_Hyp>
+        <Local_Hyp num="12">
+            <Exp_Comparison op=":">
+                <Id value="s9" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s4" suffix="1" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s27</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Ref_Hyp num="5" />
+            <Ref_Hyp num="6" />
+            <Ref_Hyp num="7" />
+            <Ref_Hyp num="8" />
+            <Ref_Hyp num="9" />
+            <Ref_Hyp num="10" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s7" suffix="1" typref="2" />
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Unary_Exp op="dom" typref="0">
+                            <Id value="s7" suffix="1" typref="2" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="4">
+                            <Id value="s7" suffix="1" typref="2" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s27</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Ref_Hyp num="5" />
+            <Ref_Hyp num="6" />
+            <Ref_Hyp num="7" />
+            <Ref_Hyp num="8" />
+            <Ref_Hyp num="9" />
+            <Ref_Hyp num="11" />
+            <Ref_Hyp num="12" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s4" suffix="1" typref="2" />
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Unary_Exp op="dom" typref="0">
+                            <Id value="s4" suffix="1" typref="2" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="4">
+                            <Id value="s4" suffix="1" typref="2" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="17210619508539130891">
+        <Tag>s28</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s9" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="s9" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s4" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Binary_Pred op="=&gt;">
+                <Exp_Comparison op="=">
+                    <Binary_Exp op="(" typref="5">
+                        <Id value="s4" typref="2" />
+                        <Id value="s9" typref="1" />
+                    </Binary_Exp>
+                    <Boolean_Literal value="TRUE" typref="5" />
+                </Exp_Comparison>
+                <Exp_Comparison op="/:">
+                    <Boolean_Literal value="FALSE" typref="5" />
+                    <Binary_Exp op="[" typref="4">
+                        <Id value="s4" typref="2" />
+                        <Binary_Exp op=".." typref="0">
+                            <Binary_Exp op="-i" typref="1">
+                                <Id value="s9" typref="1" />
+                                <Id value="s1" typref="1" />
+                            </Binary_Exp>
+                            <Id value="s9" typref="1" />
+                        </Binary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Binary_Pred>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s29</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s4" typref="2" />
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Unary_Exp op="dom" typref="0">
+                            <Id value="s4" typref="2" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="4">
+                            <Id value="s4" typref="2" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+        <Simple_Goal>
+            <Tag>s29</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s4" typref="2" />
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Unary_Exp op="dom" typref="0">
+                            <Id value="s4" typref="2" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="4">
+                            <Id value="s4" typref="2" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <Proof_Obligation goalHash="3727490037155601704">
+        <Tag>s30</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Definition name="ass" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s8" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="s8" typref="1" />
+                <Unary_Exp op="dom" typref="0">
+                    <Id value="s5" typref="2" />
+                </Unary_Exp>
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s29</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Id value="s5" typref="2" />
+                    <Binary_Exp op="+-&gt;" typref="3">
+                        <Unary_Exp op="dom" typref="0">
+                            <Id value="s5" typref="2" />
+                        </Unary_Exp>
+                        <Unary_Exp op="ran" typref="4">
+                            <Id value="s5" typref="2" />
+                        </Unary_Exp>
+                    </Binary_Exp>
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <TypeInfos>
+        <Type id="0">
+            <Unary_Exp op="POW">
+                <Id value="INTEGER" />
+            </Unary_Exp>
+        </Type>
+        <Type id="1">
+            <Id value="INTEGER" />
+        </Type>
+        <Type id="2">
+            <Unary_Exp op="POW">
+                <Binary_Exp op="*">
+                    <Id value="INTEGER" />
+                    <Id value="BOOL" />
+                </Binary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="3">
+            <Unary_Exp op="POW">
+                <Unary_Exp op="POW">
+                    <Binary_Exp op="*">
+                        <Id value="INTEGER" />
+                        <Id value="BOOL" />
+                    </Binary_Exp>
+                </Unary_Exp>
+            </Unary_Exp>
+        </Type>
+        <Type id="4">
+            <Unary_Exp op="POW">
+                <Id value="BOOL" />
+            </Unary_Exp>
+        </Type>
+        <Type id="5">
+            <Id value="BOOL" />
+        </Type>
+        <Type id="6">
+            <Binary_Exp op="*">
+                <Id value="INTEGER" />
+                <Id value="BOOL" />
+            </Binary_Exp>
+        </Type>
+    </TypeInfos>
+</Proof_Obligations>
