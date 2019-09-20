@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+This work is licensed under a
+Creative Commons Attribution-NonCommercial 4.0 International License
+CC BY-NC 4.0
+See terms at https://creativecommons.org/licenses/by-nc/4.0/
+Copyright © CLEARSY 2019
+-->
+<Proof_Obligations xmlns="https://www.atelierb.eu/Formats/pog" version="1.0">
+    <Define name="B definitions" hash="13828030950441524962">
+        <Exp_Comparison op="=">
+            <Id value="NAT" typref="0" />
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="0" typref="1" />
+                <Id value="MAXINT" typref="1" />
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="INT" typref="0" />
+            <Binary_Exp op=".." typref="0">
+                <Id value="MININT" typref="1" />
+                <Id value="MAXINT" typref="1" />
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ctx" hash="0" />
+    <Define name="seext" hash="0" />
+    <Define name="mchcst" hash="0" />
+    <Define name="aprp" hash="13504331463951581248">
+        <Exp_Comparison op=":">
+            <Id value="s0" typref="1" />
+            <Id value="NATURAL1" typref="0" />
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="s0" typref="1" />
+            <Integer_Literal value="1" typref="1" />
+        </Exp_Comparison>
+    </Define>
+    <Define name="abs" hash="0" />
+    <Define name="inv" hash="0" />
+    <Define name="ass" hash="0" />
+    <Define name="sets" hash="0" />
+    <Define name="imlprp" hash="3325645822501611342">
+        <Exp_Comparison op="=">
+            <Id value="s0" typref="1" />
+            <Integer_Literal value="1" typref="1" />
+        </Exp_Comparison>
+    </Define>
+    <Define name="imprp" hash="0" />
+    <Define name="imext" hash="0" />
+    <Proof_Obligation goalHash="10812107369551132771">
+        <Tag>s1</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="imprp" />
+        <Simple_Goal>
+            <Tag>s2</Tag>
+            <Goal>
+                <Exp_Comparison op=":">
+                    <Integer_Literal value="1" typref="1" />
+                    <Id value="NATURAL1" typref="0" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <TypeInfos>
+        <Type id="0">
+            <Unary_Exp op="POW">
+                <Id value="INTEGER" />
+            </Unary_Exp>
+        </Type>
+        <Type id="1">
+            <Id value="INTEGER" />
+        </Type>
+    </TypeInfos>
+</Proof_Obligations>

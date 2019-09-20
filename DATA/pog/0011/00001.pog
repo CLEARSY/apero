@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+This work is licensed under a
+Creative Commons Attribution-NonCommercial 4.0 International License
+CC BY-NC 4.0
+See terms at https://creativecommons.org/licenses/by-nc/4.0/
+Copyright © CLEARSY 2019
+-->
+<Proof_Obligations xmlns="https://www.atelierb.eu/Formats/pog" version="1.0">
+    <Define name="B definitions" hash="13828030950441524962">
+        <Exp_Comparison op="=">
+            <Id value="NAT" typref="0" />
+            <Binary_Exp op=".." typref="0">
+                <Integer_Literal value="0" typref="1" />
+                <Id value="MAXINT" typref="1" />
+            </Binary_Exp>
+        </Exp_Comparison>
+        <Exp_Comparison op="=">
+            <Id value="INT" typref="0" />
+            <Binary_Exp op=".." typref="0">
+                <Id value="MININT" typref="1" />
+                <Id value="MAXINT" typref="1" />
+            </Binary_Exp>
+        </Exp_Comparison>
+    </Define>
+    <Define name="ctx" hash="0" />
+    <Define name="seext" hash="0" />
+    <Define name="lprp" hash="2830076928649744801">
+        <Set>
+            <Id value="s0" typref="2" />
+        </Set>
+        <Exp_Comparison op=":">
+            <Id value="s1" typref="1" />
+            <Id value="NATURAL" typref="0" />
+        </Exp_Comparison>
+    </Define>
+    <Define name="inprp" hash="0" />
+    <Define name="inext" hash="0" />
+    <Define name="inv" hash="3633993737140184922">
+        <Exp_Comparison op=":">
+            <Id value="s2" typref="3" />
+            <Id value="s0" typref="2" />
+        </Exp_Comparison>
+    </Define>
+    <Define name="ass" hash="13153302163362602925">
+        <Quantified_Pred type="!">
+            <Variables>
+                <Id value="s3" typref="1" />
+                <Id value="s4" typref="3" />
+            </Variables>
+            <Body>
+                <Binary_Pred op="=&gt;">
+                    <Nary_Pred op="&amp;">
+                        <Exp_Comparison op=":">
+                            <Id value="s3" typref="1" />
+                            <Id value="NATURAL" typref="0" />
+                        </Exp_Comparison>
+                        <Exp_Comparison op=":">
+                            <Id value="s4" typref="3" />
+                            <Id value="s0" typref="2" />
+                        </Exp_Comparison>
+                        <Exp_Comparison op="=">
+                            <Id value="s2" typref="3" />
+                            <Id value="s4" typref="3" />
+                        </Exp_Comparison>
+                        <Exp_Comparison op="=">
+                            <Id value="s1" typref="1" />
+                            <Id value="s3" typref="1" />
+                        </Exp_Comparison>
+                    </Nary_Pred>
+                    <Nary_Pred op="or">
+                        <Nary_Pred op="&amp;">
+                            <Exp_Comparison op="=">
+                                <Id value="s2" typref="3" />
+                                <Id value="s4" typref="3" />
+                            </Exp_Comparison>
+                            <Exp_Comparison op="&lt;i">
+                                <Id value="s1" typref="1" />
+                                <Id value="s3" typref="1" />
+                            </Exp_Comparison>
+                        </Nary_Pred>
+                        <Exp_Comparison op="=">
+                            <Id value="s2" typref="3" />
+                            <Id value="s4" typref="3" />
+                        </Exp_Comparison>
+                    </Nary_Pred>
+                </Binary_Pred>
+            </Body>
+        </Quantified_Pred>
+    </Define>
+    <Define name="cst" hash="0" />
+    <Define name="sets" hash="11817713561586396896">
+        <Set>
+            <Id value="s0" typref="2" />
+        </Set>
+    </Define>
+    <Proof_Obligation goalHash="6935219668463281822">
+        <Tag>s5</Tag>
+        <Definition name="B definitions" />
+        <Definition name="ctx" />
+        <Definition name="cst" />
+        <Definition name="lprp" />
+        <Definition name="inprp" />
+        <Definition name="inext" />
+        <Definition name="seext" />
+        <Definition name="inv" />
+        <Local_Hyp num="1">
+            <Exp_Comparison op=":">
+                <Id value="s3" typref="1" />
+                <Id value="NATURAL" typref="0" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="2">
+            <Exp_Comparison op=":">
+                <Id value="s4" typref="3" />
+                <Id value="s0" typref="2" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="3">
+            <Exp_Comparison op="=">
+                <Id value="s2" typref="3" />
+                <Id value="s4" typref="3" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Local_Hyp num="4">
+            <Exp_Comparison op="=">
+                <Id value="s1" typref="1" />
+                <Id value="s3" typref="1" />
+            </Exp_Comparison>
+        </Local_Hyp>
+        <Simple_Goal>
+            <Tag>s6</Tag>
+            <Ref_Hyp num="1" />
+            <Ref_Hyp num="2" />
+            <Ref_Hyp num="3" />
+            <Ref_Hyp num="4" />
+            <Goal>
+                <Exp_Comparison op="&lt;i">
+                    <Id value="s1" typref="1" />
+                    <Id value="s3" typref="1" />
+                </Exp_Comparison>
+            </Goal>
+            <Proof_State proofState="Unproved" methodList="?" passList="Force(0),?" />
+        </Simple_Goal>
+    </Proof_Obligation>
+    <TypeInfos>
+        <Type id="0">
+            <Unary_Exp op="POW">
+                <Id value="INTEGER" />
+            </Unary_Exp>
+        </Type>
+        <Type id="1">
+            <Id value="INTEGER" />
+        </Type>
+        <Type id="2">
+            <Unary_Exp op="POW">
+                <Id value="s0" />
+            </Unary_Exp>
+        </Type>
+        <Type id="3">
+            <Id value="s0" />
+        </Type>
+    </TypeInfos>
+</Proof_Obligations>
