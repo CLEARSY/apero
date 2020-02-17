@@ -26,3 +26,10 @@ The data is provided as a collection of data sets, each data set corresponding t
 ## License
 
 All the resources are distributed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). The terms of the license are available at the following URL: https://creativecommons.org/licenses/by-nc/4.0/.
+
+## Related
+
+### The CLEARSY Safety Platform Programming Handbook
+
+This resource has a dedicated repository: https://github.com/TProver/CSSP-Programming-Handbook.
+
