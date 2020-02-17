@@ -31,5 +31,5 @@ All the resources are distributed under the Creative Commons Attribution-NonComm
 
 ### The CLEARSY Safety Platform Programming Handbook
 
-This resource has a dedicated repository: https://github.com/TProver/CSSP-Programming-Handbook.
+This resource has a dedicated repository: https://github.com/CLEARSY/CSSP-Programming-Handbook.
 
