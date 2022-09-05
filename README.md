@@ -29,6 +29,10 @@ Data and formats are distributed under the Creative Commons Attribution-NonComme
 
 Tools are distributed under the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GNU General Public License Version 3</a>.
 
+## Acknowledgements
+
+Part of the contents of this repository has been produced thanks to the support of [Agence Nationale de la Recherche](https://anr.fr), through project [BLaSST](https://anr.fr/Projet-ANR-21-CE25-0010).
+
 ## Related
 
 ### The CLEARSY Safety Platform Programming Handbook
