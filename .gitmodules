@@ -1,3 +1,6 @@
 [submodule "TOOLS/pogmetrics"]
 	path = TOOLS/pogmetrics
 	url = https://github.com/CLEARSY/pogmetrics
+[submodule "TOOLS/pptranssmt"]
+	path = TOOLS/pptranssmt
+	url = https://github.com/CLEARSY/pptranssmt
