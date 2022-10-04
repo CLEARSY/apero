@@ -1,0 +1,3 @@
+[submodule "TOOLS/pogmetrics"]
+	path = TOOLS/pogmetrics
+	url = https://github.com/CLEARSY/pogmetrics
